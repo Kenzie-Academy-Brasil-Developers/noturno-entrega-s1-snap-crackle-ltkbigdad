@@ -1,21 +1,27 @@
 function snapCrackle(maxValue){
-  for (let contador = 1; contador <= maxValue; contador++){   
+  let saida = '';  
+  
+  for (let contador = 1; contador <= maxValue; contador++){     
    
-    
      if(contador % 5 == 0 && contador % 2 == 1){
-     let num = 'snapCrackle'
-     console.log(num)
+     saida += ', snapCrackle, '
+     
     }
    else if(contador % 5 == 0){
-     let num = 'crackle'
-     console.log(num) 
+     saida += 'crackle'
+      
    } 
-    else if(contador % 2 == 1){
-     let num = 'snap'
-     console.log(num)
-   }  
-    else{console.log(contador)}
+    else if(contador % 2 == 1 && contador > 1){
+     saida += ', snap, '
+     
+   }  else if(contador  === 1){
+     saida += 'snap, '
+     
+   }
+    else{saida += contador }
     
   }
+  console.log(saida)
 }
 
+console.log(snapCrackle(20))
